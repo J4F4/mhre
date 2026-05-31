@@ -1,0 +1,18 @@
+{
+  "name": "محمد الحبيشي العقارية | Alhubishi Real Estate",
+  "short_name": "الحبيشي العقارية",
+  "description": "حلول عقارية احترافية للتأجير والبيع وإدارة الأملاك في الرياض",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06122b",
+  "theme_color": "#0a1f44",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

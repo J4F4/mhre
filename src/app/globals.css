@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #06122b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-navy-900 antialiased;
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  .dark body {
+    @apply bg-navy-950 text-navy-50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), serif;
+    @apply font-bold tracking-tight;
+  }
+
+  /* Custom selection */
+  ::selection {
+    @apply bg-turquoise-300 text-navy-900;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-700 rounded-full;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-100 dark:bg-navy-900;
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise-400 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-navy-800 text-white shadow-luxe hover:bg-navy-700 hover:shadow-luxe-lg dark:bg-turquoise-500 dark:text-navy-950 dark:hover:bg-turquoise-400;
+  }
+
+  .btn-outline {
+    @apply btn border border-white/70 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-navy-900;
+  }
+
+  .btn-ghost {
+    @apply btn border border-navy-200 bg-transparent text-navy-800 hover:border-navy-800 hover:bg-navy-50 dark:border-navy-700 dark:text-navy-100 dark:hover:bg-navy-800;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1ebe5b];
+  }
+
+  .section {
+    @apply py-16 sm:py-24;
+  }
+
+  .eyebrow {
+    @apply mb-3 inline-block text-sm font-semibold uppercase tracking-[0.25em] text-turquoise-600 dark:text-turquoise-300;
+  }
+
+  .card-luxe {
+    @apply overflow-hidden rounded-3xl border border-navy-100 bg-white shadow-card transition-all duration-500 dark:border-navy-800 dark:bg-navy-900;
+  }
+
+  .input-luxe {
+    @apply w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 outline-none transition focus:border-navy-600 focus:ring-2 focus:ring-turquoise-200 dark:border-navy-700 dark:bg-navy-900 dark:text-navy-50;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-navy-50 px-3 py-1 text-xs font-medium text-navy-700 dark:bg-navy-800 dark:text-navy-100;
+  }
+}
+
+/* Decorative gradient text */
+.text-gradient-luxe {
+  background: linear-gradient(120deg, #ffffff 0%, #9fe9e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Leaflet popup theming */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(10, 31, 68, 0.5) !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 240px !important;
+}
+.leaflet-popup-tip {
+  background: #0a1f44 !important;
+}
+.leaflet-container {
+  font-family: var(--font-body), sans-serif;
+}

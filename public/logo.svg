@@ -1,0 +1,21 @@
+<svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شعار محمد الحبيشي العقارية">
+  <!-- Rooflines / building motif inspired by the brand mark -->
+  <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+    <path d="M14 64 L132 16" />
+    <path d="M20 74 L138 26" />
+    <path d="M132 16 L132 70" />
+    <path d="M138 26 L138 70" />
+  </g>
+  <!-- Diamond accents -->
+  <g fill="currentColor">
+    <rect x="40" y="86" width="9" height="9" transform="rotate(45 44.5 90.5)" />
+    <rect x="62" y="86" width="9" height="9" transform="rotate(45 66.5 90.5)" />
+    <rect x="84" y="86" width="9" height="9" transform="rotate(45 88.5 90.5)" />
+    <rect x="106" y="86" width="9" height="9" transform="rotate(45 110.5 90.5)" />
+  </g>
+  <g fill="currentColor">
+    <rect x="51" y="104" width="7" height="7" transform="rotate(45 54.5 107.5)" />
+    <rect x="73" y="104" width="7" height="7" transform="rotate(45 76.5 107.5)" />
+    <rect x="95" y="104" width="7" height="7" transform="rotate(45 98.5 107.5)" />
+  </g>
+</svg>
