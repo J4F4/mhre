@@ -29,17 +29,18 @@ export function Logo({
         }`}
       >
         {imgOk ? (
+          // شعار الشركة الحقيقي داخل بطاقة بيضاء ليظهر بوضوح على كل الخلفيات
           // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={LOGO_IMAGE}
-            alt={COMPANY.nameAr}
-            width={52}
-            height={44}
-            onError={() => setImgOk(false)}
-            className={`h-11 w-auto object-contain ${
-              inverted ? "brightness-0 invert" : "dark:brightness-0 dark:invert"
-            }`}
-          />
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-sm ring-1 ring-black/5 sm:h-14 sm:w-14">
+            <img
+              src={LOGO_IMAGE}
+              alt={COMPANY.nameAr}
+              width={56}
+              height={56}
+              onError={() => setImgOk(false)}
+              className="h-full w-full object-contain"
+            />
+          </span>
         ) : (
           // الرمز البديل — خطوط أسطح + معينات (يحاكي روح شعار الشركة)
           <svg width="52" height="44" viewBox="0 0 160 120" fill="none" aria-hidden>

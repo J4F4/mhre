@@ -57,8 +57,9 @@ export const metadata: Metadata = {
     description: COMPANY.description,
   },
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   manifest: "/site.webmanifest",
   robots: { index: true, follow: true },
