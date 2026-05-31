@@ -31,12 +31,12 @@ export function Logo({
         {imgOk ? (
           // شعار الشركة الحقيقي داخل بطاقة بيضاء ليظهر بوضوح على كل الخلفيات
           // eslint-disable-next-line @next/next/no-img-element
-          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-sm ring-1 ring-black/5 sm:h-14 sm:w-14">
+          <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-white p-0.5 shadow-sm ring-1 ring-black/5 sm:h-[4.5rem] sm:w-[4.5rem]">
             <img
               src={LOGO_IMAGE}
               alt={COMPANY.nameAr}
-              width={56}
-              height={56}
+              width={72}
+              height={72}
               onError={() => setImgOk(false)}
               className="h-full w-full object-contain"
             />
