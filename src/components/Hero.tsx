@@ -4,42 +4,50 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
 import { ArrowIcon } from "./icons";
+import {
+  HERO_POSTER_LOCAL,
+  HERO_POSTER_FALLBACK,
+  HERO_VIDEO,
+} from "@/lib/assets";
 
 /**
  * Full-screen hero.
  *
- * Background priority:
- *   1. A looping night video at /videos/hero.mp4 (KAFD / Olaya towers at night).
- *   2. The poster image (also shown while the video loads, or if it is absent).
+ * Background priority (الأعلى يغطّي ما تحته):
+ *   1. فيديو الخلفية public/videos/hero.mp4 (مركز الملك عبدالله المالي ليلاً).
+ *   2. صورتك المحلية public/hero.jpg (تظهر تلقائياً عند رفعها).
+ *   3. صورة بديلة محايدة (ليست معلماً لمدينة أخرى).
  *
- * Drop your video file at public/videos/hero.mp4 to enable the video; until
- * then the high-quality night poster is used automatically.
+ * لتغيير خلفية الـ Hero: ضع صورتك في public/hero.jpg (أو فيديو في
+ * public/videos/hero.mp4) ولا حاجة لأي تعديل في الكود.
  */
-const POSTER =
-  "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80";
-
 export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-      {/* Background media */}
+      {/* Background media — layered, top covers bottom */}
       <div className="absolute inset-0 -z-10">
+        {/* 3) البديل المحايد في الأسفل */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${HERO_POSTER_FALLBACK})` }}
+          aria-hidden
+        />
+        {/* 2) صورتك المحلية فوقه (تختفي تلقائياً إن لم يوجد الملف) */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${HERO_POSTER_LOCAL})` }}
+          aria-hidden
+        />
+        {/* 1) الفيديو في الأعلى (إن وُجد) */}
         <video
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          poster={POSTER}
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-          <source src="/videos/hero.webm" type="video/webm" />
+          <source src={HERO_VIDEO} type="video/mp4" />
         </video>
-        {/* Fallback image layer (covered by video when it plays) */}
-        <div
-          className="absolute inset-0 -z-10 bg-cover bg-center"
-          style={{ backgroundImage: `url(${POSTER})` }}
-          aria-hidden
-        />
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
